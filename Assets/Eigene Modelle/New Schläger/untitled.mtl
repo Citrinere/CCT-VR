@@ -1,0 +1,13 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl default
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\Alex\\Desktop\\Studium\\4.Semester\\VR AR\\Modelle\\Tennis_racket_V3_L3.123c4947b16d-cb34-4850-bca9-7f4ffd33bbb8\\Tennis_racket_V3_L3.123c4947b16d-cb34-4850-bca9-7f4ffd33bbb8\\10540_Tennis_racket_V2_Diffuse.jpg
