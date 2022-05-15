@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
             // Setting True so that their is only one GameOver not multiple at a time.
             gameHasEnded = true;
 
-            //Invoke("Restart", restartDelay);
+            // Invoke("Restart", restartDelay); // Startet ohne Button interaktion einfach selbst.
         }
     }
 
