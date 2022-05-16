@@ -9,13 +9,10 @@ public class RandomTargetSpawner : MonoBehaviour
     public GameObject[] myTargets;
     int targetCounter;
 
-    int xSpawnPos;
     int ySpawnPos;
     int xzSpawnPos, xzSpawnNeg;
     public float[] randomRotation = new float[] { 0, 30, 45, 90 };
-    float xRotation;
-    float yRotation;
-    float zRotation;
+    Vector3 randomSpawnposition;
 
     float timeValue;
     bool resetTime;
@@ -42,6 +39,7 @@ public class RandomTargetSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (timeValue > 0)
         {
             timeValue -= Time.deltaTime;
@@ -75,16 +73,22 @@ public class RandomTargetSpawner : MonoBehaviour
         { 
             int RandomIndex = Random.Range(0, myTargets.Length);
 
-            ySpawnPos = Random.Range(2, 4);
-            xzSpawnPos = Random.Range(5, 11);
-            xzSpawnNeg = Random.Range(-5, -11);
+            ySpawnPos = Random.Range(3, 5);
+            xzSpawnPos = Random.Range(7, 11);
+            xzSpawnNeg = Random.Range(-11, -7);
+            
+            randomSpawnposition = new Vector3(Random.Range(xzSpawnNeg, xzSpawnPos), ySpawnPos, Random.Range(xzSpawnNeg, xzSpawnPos));
 
-            Vector3 randomSpawnposition = new Vector3(Random.Range(xzSpawnPos, xzSpawnNeg), ySpawnPos, Random.Range(xzSpawnPos, xzSpawnNeg));
-            xRotation = randomRotation[Random.Range(0, randomRotation.Length)];
-            //float yRotation = Random.Range(0, randomRotation.Length);
-            zRotation = randomRotation[Random.Range(0, randomRotation.Length)];
+            if (randomSpawnposition.x < 7 || randomSpawnposition.x > -7)
+            {
+                randomSpawnposition = new Vector3(Random.Range(xzSpawnNeg, xzSpawnPos), ySpawnPos, Random.Range(xzSpawnNeg, xzSpawnPos));
+            }
+            else if (randomSpawnposition.z < 7 || randomSpawnposition.z > -7)
+            {
+                randomSpawnposition = new Vector3(Random.Range(xzSpawnNeg, xzSpawnPos), ySpawnPos, Random.Range(xzSpawnNeg, xzSpawnPos));
+            }
 
-            Instantiate(myTargets[RandomIndex], randomSpawnposition, transform.rotation * Quaternion.Euler(xRotation, 0f, zRotation));
+            Instantiate(myTargets[RandomIndex], randomSpawnposition, transform.rotation);
             Debug.Log("New Target has spawned");
         }
     }
@@ -93,27 +97,27 @@ public class RandomTargetSpawner : MonoBehaviour
     {
         if (targetname == "Red")
         {
-            targetCounter--;
+            targetCounter -= 1;
             Debug.Log("-1 Target, " + targetCounter + " are left.");
         }
         if (targetname == "Mint-Green")
         {
-            targetCounter--;
+            targetCounter -= 1;
             Debug.Log("-1 Target, " + targetCounter + " are left.");
         }
         if (targetname == "Yellow")
         {
-            targetCounter--;
+            targetCounter -= 1;
             Debug.Log("-1 Target, " + targetCounter + " are left.");
         }
         if (targetname == "Light-Blue")
         {
-            targetCounter--;
+            targetCounter -= 1;
             Debug.Log("-1 Target, " + targetCounter + " are left.");
         }
         if (targetname == "Blue")
         {
-            targetCounter--;
+            targetCounter -= 1;
             Debug.Log("-1 Target, " + targetCounter + " are left.");
         }
     }
@@ -124,4 +128,5 @@ public class RandomTargetSpawner : MonoBehaviour
         timeValue = 12;
         Debug.Log("Reset Targetspawn Time");
     }
+
 }
