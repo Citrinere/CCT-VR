@@ -1,2 +1,2 @@
 # CCT VR
- Group Project at University of Applied Science Worms for the modul virtual and augmented reality Summer 2022
+ Group Project at the University of Applied Science Worms for the module Virtual and Augmented Reality Summer Semester 2022
