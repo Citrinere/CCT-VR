@@ -3484,10 +3484,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTargets:
   - {fileID: 8790921014645063654, guid: df94a092df5aae24f88ea40397710f7e, type: 3}
-  - {fileID: 8153111028594446097, guid: 1bd3fb1f737677c4a90b5869cab9022b, type: 3}
-  - {fileID: 5944787216072103658, guid: f2cc2669cc735bb45a012c6c2de2d634, type: 3}
-  - {fileID: 6950263052185682942, guid: 5ca1bbea507ef41408c7b7bc180762b9, type: 3}
-  - {fileID: 3907185484997724008, guid: a4f3f4184a752364f8364ebb2936b63c, type: 3}
   randomRotation:
   - 0
   - 30
